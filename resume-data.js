@@ -1,4 +1,3 @@
-// Resume data - Edit this file to update resume content
 const RESUME_DATA = {
     name: "João Freire",
     role: "Game Programmer",
@@ -18,8 +17,9 @@ const RESUME_DATA = {
                 { tone: "secondary", icon: "location", text: "Gothenburg, Sweden (Remote)" },
             ],
             bullets: [
-                "Owned gameplay and VR feature development for production milestones and release quality.",
-                "Implemented and polished interaction systems with focus on performance and player comfort."
+                "Currently working on an unannounced title.",
+                "Owned VR development for 'The Midnight Walk', contributing to a successful multi-platform release on PC, PS5, PSVR2 and Switch 2 that culminated in a win for 'Best VR/AR Game' at The Game Awards 2025.",
+                "Developed reusable and scalable gameplay systems that could be used on current and future projects."
             ]
         },
         {
@@ -27,17 +27,16 @@ const RESUME_DATA = {
             year: "2022-2023",
             meta: [
                 { tone: "primary", icon: "person", text: "Programmer Internship" },
-                { tone: "secondary", icon: "location", text: "Gothenburg, Sweden" },
+                { tone: "secondary", icon: "location", text: "Gothenburg, Sweden (Remote)" },
             ],
             bullets: [
-                "Owned gameplay and VR feature development for production milestones and release quality.",
-                "Implemented and polished interaction systems with focus on performance and player comfort."
+                "Developed gameplay features and systems during a 3 month internship, contributing to multiple production milestones for 'The Midnight Walk'."
             ]
         },
     ],
     projects: [
         {
-            title: "Unanounced Title",
+            title: "Unannounced Title",
             year: "2025-Present",
             meta: [
                 { tone: "primary", icon: "person", text: "Programmer" },
@@ -45,7 +44,7 @@ const RESUME_DATA = {
                 { tone: "secondary", icon: "home", text: "Moonhood AB" },
             ],
             bullets: [
-                "Developed gameplay systems and interaction mechanics for puzzle-focused cooperative gameplay."
+                "Developing for an unannounced title."
             ]
         },
         {
@@ -57,8 +56,9 @@ const RESUME_DATA = {
                 { tone: "secondary", icon: "home", text: "Moonhood AB" },
             ],
             bullets: [
-                "Developed gameplay systems and interaction mechanics for puzzle-focused cooperative gameplay.",
-                "Implemented and polished VR-specific features with focus on reliability and player comfort."
+                "Contributed to a successful multi-platform release on PC, PS5, PSVR2 and Switch 2.",
+                "Developed gameplay systems for hybrid flatscreen/VR.",
+                "Ensured that features were shipped with high quality and met certification requirements across production milestones."
             ]
         },
         {
@@ -70,7 +70,7 @@ const RESUME_DATA = {
                 { tone: "secondary", icon: "home", text: "Student Team" },
             ],
             bullets: [
-                "Implemented core gameplay features and camera interactions in a multidisciplinary team.",
+                "Developed core gameplay systems like shooting and projectile movement, puzzle interactions and object grabbing and dragging.",
             ]
         },
         {
@@ -82,7 +82,7 @@ const RESUME_DATA = {
                 { tone: "secondary", icon: "home", text: "Student Team" },
             ],
             bullets: [
-                "Implemented core gameplay features and camera interactions in a multidisciplinary team.",
+                "Implemented core mechanics like interaction system, camera management and camera system.",
             ]
         },
     ],
@@ -93,14 +93,15 @@ const RESUME_DATA = {
     skills: [
         "C++",
         "C#",
-        "Unreal Engine",
+        "Unreal",
         "Unity",
-        "Gameplay Systems",
-        "Tools Programming"
+        "Git",
+        "Perforce"
     ],
     languages: [
         { name: "Portuguese", level: 5 },
         { name: "English", level: 5 },
-        { name: "Swedish", level: 3 }
+        { name: "Swedish", level: 3 },
+        { name: "Spanish", level: 3 }
     ],
 };

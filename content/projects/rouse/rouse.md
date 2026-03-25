@@ -1,7 +1,7 @@
 ## Overview
-I developed core gameplay systems like shooting and projectile movement, puzzle interactions and object grabbing and dragging.
+Developed core gameplay systems like shooting and projectile movement, puzzle interactions and object grabbing and dragging.
 
-## Highligts
+## Highlights
 * Third person aiming and physics based shooting with projectile trajectory.
 * Object grabbing and dragging.
 * System for puzzles.
@@ -56,7 +56,7 @@ Two actor components are used on this system. One on the object that can be push
 * Individually rotating bones to match direction that character is trying to push at. This works for both when the character is succesfully pushing or when it grabs an object but can't push it. In this last case, it will just lean towards the predicted movement direction (taken from input instead of the actual velocity).
 * Character will also "holster" gun when grabbing and move each hand to its IK target.
 
-## Puzzle Interactions
+## Puzzle System
 The behaviour is inspired by an AND processor where all the output responses will get triggered if all buttons are pressed. The processor’s behaviour is easily customizable to work like a NAND, OR, XOR, etc.
 
 An event is called on each response component being triggered which allows for a modular system. Multiple and diverse events can be called: Opening doors, UI prompts, particle effects, etc. These were exposed to BP and mostly worked on by designers.

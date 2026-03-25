@@ -7,7 +7,7 @@ window.projectDataRegistry["rouse"] = {
     role: "Gameplay Programmer",
     company: "Futuregames",
     description: "Rouse is a 3rd-person physics-based puzzle platformer. The game's main mechanic is a gun that can physically affect the world.",
-    cardDescription: "Developed shooting mechanics with a custom trajectory solver. Worked with procedural animation for dynamic interactions.",
+    cardDescription: "Developed shooting mechanics with a projectile trajectory solver. Worked with procedural animation for dynamic interactions.",
     links: [
         {
             type: "github",

@@ -1,6 +1,6 @@
 ## Overview
 
-A gameplay-focused project where I implemented core mechanics like interaction system, camera management and camera system.
+Implemented core mechanics like interaction system, camera management and camera system.
 
 ## Highlights
 - Third person camera controller that can orbit or follow and rotate towards a target if there's no player input. It also will react to collision and occlusion as expected and adjust its distance to the target accordingly. Camera also has a free move zone as seen in many AAA games.

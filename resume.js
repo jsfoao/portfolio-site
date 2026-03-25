@@ -114,6 +114,7 @@ function renderLanguages(languages) {
                     <div class="language-rating" aria-label="${lang.name} proficiency level ${lang.level} out of 5">
                         ${circles}
                     </div>
+                    <span class="language-level-compact" aria-hidden="true">${lang.level}/5</span>
                 </div>
             `;
         })

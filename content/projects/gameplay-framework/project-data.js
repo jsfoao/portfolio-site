@@ -2,11 +2,11 @@ window.projectDataRegistry = window.projectDataRegistry || {};
 
 window.projectDataRegistry["gameplay-framework"] = {
     title: "Multiplayer Gameplay Framework",
-    year: "2025",
+    year: "Not released",
     tool: "Unity",
     roles: ["Programmer"],
-    description: "Unnannounced title in development at Moonhood. Not ready to share details yet!",
-    cardDescription: "Currently working on an unannounced title at Moonhood. Not ready to share details yet!",
+    description: "Gameplay Framework developed as a personal project to explore and deepen my understanding of multiplayer game systems and architecture.",
+    cardDescription: "Gameplay Framework with special focus on multiplayer systems.",
     links: [
         {
             type: "site",
@@ -15,13 +15,13 @@ window.projectDataRegistry["gameplay-framework"] = {
     ],
     tags: ["C#", "Multiplayer", "Framework", "Gameplay"],
     link: "project.html?slug=gameplay-framework",
-    cardImage: "content/projects/gameplay-framework/assets/secret.png",
+    cardImage: "content/projects/unannounced/assets/secret.png",
     hoverMedia: "",
     gallery: [
         {
             type: "image",
-            src: "content/projects/gameplay-framework/assets/secret.png",
-            alt: "Unannounced Title key art"
+            src: "content/projects/unannounced/assets/secret.png",
+            alt: "Multiplayer Gameplay Framework key art"
         },
     ]
 };

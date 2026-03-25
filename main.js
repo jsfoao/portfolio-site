@@ -22,7 +22,11 @@ function renderHero() {
         title.textContent = hero.title || "";
     }
     if (description) {
-        description.textContent = hero.description || "";
+        if (Array.isArray(hero.description)) {
+            description.textContent = hero.description.filter(Boolean).join("\n\n");
+        } else {
+            description.textContent = hero.description || "";
+        }
     }
 
     const contactEl = document.getElementById("heroContact");
@@ -289,13 +293,33 @@ function createEducationCard(item) {
     const location = createMetaItem(item.location, "entry-meta-secondary", "location");
     meta.appendChild(location);
 
-    const description = document.createElement("p");
-    description.className = "entry-description";
-    description.textContent = item.description;
-
     card.appendChild(top);
     card.appendChild(meta);
-    card.appendChild(description);
+
+    if (item.description) {
+        const description = document.createElement("p");
+        description.className = "entry-description";
+        description.textContent = item.description;
+        card.appendChild(description);
+    }
+
+    if (Array.isArray(item.bullets) && item.bullets.length > 0) {
+        const bullets = document.createElement("ul");
+        bullets.className = "entry-bullets";
+
+        item.bullets.forEach((bullet) => {
+            if (typeof bullet !== "string" || !bullet.trim()) {
+                return;
+            }
+            const bulletItem = document.createElement("li");
+            bulletItem.textContent = bullet;
+            bullets.appendChild(bulletItem);
+        });
+
+        if (bullets.childNodes.length > 0) {
+            card.appendChild(bullets);
+        }
+    }
 
     return card;
 }
@@ -329,13 +353,33 @@ function createExperienceCard(item) {
     const location = createMetaItem(item.location, "entry-meta-secondary", "location");
     meta.appendChild(location);
 
-    const description = document.createElement("p");
-    description.className = "entry-description";
-    description.textContent = item.description;
-
     card.appendChild(top);
     card.appendChild(meta);
-    card.appendChild(description);
+
+    if (item.description) {
+        const description = document.createElement("p");
+        description.className = "entry-description";
+        description.textContent = item.description;
+        card.appendChild(description);
+    }
+
+    if (Array.isArray(item.bullets) && item.bullets.length > 0) {
+        const bullets = document.createElement("ul");
+        bullets.className = "entry-bullets";
+
+        item.bullets.forEach((bullet) => {
+            if (typeof bullet !== "string" || !bullet.trim()) {
+                return;
+            }
+            const bulletItem = document.createElement("li");
+            bulletItem.textContent = bullet;
+            bullets.appendChild(bulletItem);
+        });
+
+        if (bullets.childNodes.length > 0) {
+            card.appendChild(bullets);
+        }
+    }
 
     return card;
 }
