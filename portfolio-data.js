@@ -3,7 +3,7 @@ const portfolioData = {
     hero: {
         eyebrow: "Game Programmer",
         title: "Hello!",
-        description: "I work across gameplay, engine code, and rendering with a strong base in math and physics. I enjoy shipping practical solutions and collaborating closely with designers and artists.",
+        description: "I'm a game programmer with an engineering background and a strong foundation in mathematics, physics, and linear algebra. I specialize in building gameplay systems that scale across teams and projects. Currently working at Moonhood developing multi-platform titles.",
         contact: [
             { type: "location", label: "Stockholm, Sweden" },
             { type: "email",    label: "joao.saraivafreire@gmail.com",          href: "mailto:your@email.com" },
@@ -18,11 +18,7 @@ const portfolioData = {
         "C#",
         "Unity",
         "Lua",
-        "Löve2D",
         "OpenGL",
-        "Physics",
-        "Gameplay Systems",
-        "Tools",
         "Git",
         "Perforce"
     ],
@@ -140,8 +136,8 @@ const portfolioData = {
             ],
             tags: ["C++", "OpenGL", "Engine", "Physics"],
             link: "project.html?slug=nata-engine",
-            cardImage: "assets/img/projects/nata-engine/collision.png",
-            hoverMedia: "assets/img/projects/nata-engine/shooterdemo.gif"
+            cardImage: "content/projects/nata-engine/assets/collision.png",
+            hoverMedia: "content/projects/nata-engine/assets/shooterdemo.gif"
         },
         {
             title: "Löve2D Boss Fight",
@@ -151,9 +147,9 @@ const portfolioData = {
             description: "Pack Up & Leaf is a 3D Adventure Platformer game inspired by old classics like Spyro and Banjo Kazooie",
             cardDescription: "Game jam featuring an ECS architecture and rigidbody physics implementation in Lua with Löve2D.",
             tags: ["Löve2D", "Lua", "ECS", "Rendering", "Physics"],
-            link: "project.html?slug=pack-up-and-leaf",
-            cardImage: "assets/img/projects/pual/PUAL_Marketing.png",
-            hoverMedia: "assets/img/projects/pual/bonking.gif"
+            link: "project.html?slug=love-2d-boss",
+            cardImage: "content/projects/love-2d-boss/assets/screenshotgame.png",
+            hoverMedia: "content/projects/love-2d-boss/assets/gameplay.gif"
         }
     ],
     experience: [

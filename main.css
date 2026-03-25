@@ -280,6 +280,10 @@ h1 {
     gap: 0.55rem;
 }
 
+.hero-pill-row {
+    margin-top: 1.35rem;
+}
+
 .pill {
     display: inline-flex;
     align-items: center;

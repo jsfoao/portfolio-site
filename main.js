@@ -103,7 +103,15 @@ function createMetaItem(text, toneClass, iconType) {
     return item;
 }
 
+function shouldEnableCardHoverMedia() {
+    return window.matchMedia("(hover: hover) and (pointer: fine) and (min-width: 761px)").matches;
+}
+
 function createHoverMedia(project) {
+    if (!shouldEnableCardHoverMedia()) {
+        return null;
+    }
+
     if (!project.hoverMedia) {
         return null;
     }
