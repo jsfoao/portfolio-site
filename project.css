@@ -6,6 +6,30 @@
     gap: 1.2rem;
 }
 
+.project-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    align-self: flex-start;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.86rem;
+    line-height: 1;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.project-back-link svg {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+}
+
+.project-back-link:hover,
+.project-back-link:focus-visible {
+    color: var(--accent);
+    transform: translateX(-2px);
+}
+
 /* Hero card */
 .project-hero {
     display: grid;

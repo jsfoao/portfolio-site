@@ -1,13 +1,11 @@
 ## Overview
-
-I developed gameplay systems and puzzle-related interactions, focusing on responsiveness and reliability under production constraints.
+I developed core gameplay systems like shooting and projectile movement, puzzle interactions and object grabbing and dragging.
 
 ## Highligts
-
-- Third person aiming and physics based shooting with projectile trajectory.
-- Object grabbing and dragging.
-- System for puzzles.
-- Procedural animations using IK.
+* Third person aiming and physics based shooting with projectile trajectory.
+* Object grabbing and dragging.
+* System for puzzles.
+* Procedural animations using IK.
 
 ## Aiming and Shooting
 ### Trajectory

@@ -123,4 +123,3 @@ public void DropRandom()
 <a href="https://www.youtube.com/watch?v=raQ3iHhE_Kk&t=2100s" target="_blank" rel="noopener noreferrer">Game Architecture with Scriptable Objects</a>
 
 * Folder and naming conventions: Unfortunately, not enough time was reserved to plan folder structure and naming conventions in the beginning of this project so as one can expect, the folder organization and naming got messy.
-* Pair programming: Since the player movement is the main mechanic in this game, we divided player controller and camera in two. It was crucial to work closely with the programmer who was working on the movement since many references are shared between these systems and they both have to work well together. We did it by pair programming extensively and that proved very beneficial for this project.

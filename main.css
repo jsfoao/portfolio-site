@@ -268,9 +268,29 @@ h1 {
     padding: 0;
 }
 
+.about-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 270px;
+    gap: 2.4rem;
+    align-items: start;
+}
+
+.about-copy {
+    min-width: 0;
+}
+
 .section-body p {
     color: var(--muted);
     line-height: 1.8;
+}
+
+.about-image {
+    width: 270px;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 1px solid var(--line);
+    justify-self: end;
 }
 
 .pill-row {
@@ -508,6 +528,17 @@ h1 {
     .hero-image {
         width: 130px;
         height: 130px;
+    }
+
+    .about-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .about-image {
+        width: 195px;
+        height: 195px;
+        justify-self: start;
     }
 }
 

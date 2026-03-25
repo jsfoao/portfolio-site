@@ -3,7 +3,7 @@ const portfolioData = {
     hero: {
         eyebrow: "Game Programmer",
         title: "Hello!",
-        description: "I'm a game programmer with an engineering background and a strong foundation in mathematics, physics, and linear algebra. I specialize in building gameplay systems that scale across teams and projects. Currently working at Moonhood developing multi-platform titles.",
+        description: "I'm a game programmer with an engineering background and a strong foundation in mathematics, physics, and linear algebra. I specialize in building gameplay systems that scale across teams and projects. Working at Moonhood where we recently shipped 'The Midnight Walk' on multiple platforms. Currently working on a unannounced title.",
         contact: [
             { type: "location", label: "Stockholm, Sweden" },
             { type: "email",    label: "joao.saraivafreire@gmail.com",          href: "mailto:your@email.com" },
@@ -23,6 +23,27 @@ const portfolioData = {
         "Perforce"
     ],
     projects: [
+        {
+            title: "Unannounced Title",
+            year: "Not released",
+            tool: "Unreal",
+            roles: ["Programmer"],
+            company: "Moonhood AB",
+            description: "Unnannounced title in development at Moonhood. Not ready to share details yet!",
+            cardDescription: "Unannounced title in development at Moonhood. Not ready to share details yet!",
+            links: [
+                {
+                    type: "site",
+                    href: "https://www.moonhood.se"
+                }
+            ],
+            tags: ["C++", "Angelscript", "Secret"],
+            link: "",
+            cardImage: "content/projects/unannounced/assets/secret.png",
+            hoverMedia: "",
+            gallery: [
+            ]
+        },
         {
             title: "The Midnight Walk",
             year: "2025",
@@ -85,7 +106,7 @@ const portfolioData = {
             tool: "Unreal",
             role: "Gameplay Programmer",
             company: "Futuregames",
-            description: "Rouse is a 3rd-person physics-based puzzle platformer. You play as Rose who finds herself trapped inside the dream of her little brother. The game's main mechanic is a gun that can physically affect the world.",
+            description: "Rouse is a 3rd-person physics-based puzzle platformer. The game's main mechanic is a gun that can physically affect the world.",
             cardDescription: "Developed shooting mechanics with a custom trajectory solver. Worked with procedural animation for dynamic interactions.",
             links: [
                 {
@@ -125,7 +146,6 @@ const portfolioData = {
             year: "2023",
             tool: "Custom Engine",
             role: "Programmer",
-            company: "Solo",
             description: "Simple data-driven game engine built from scratch in C++ and OpenGL",
             cardDescription: "Simple data-driven game engine built from scratch in C++ and OpenGL",
             links: [
@@ -144,8 +164,14 @@ const portfolioData = {
             year: "2023",
             tool: "Löve2D",
             role: "Programmer",
-            description: "Pack Up & Leaf is a 3D Adventure Platformer game inspired by old classics like Spyro and Banjo Kazooie",
-            cardDescription: "Game jam featuring an ECS architecture and rigidbody physics implementation in Lua with Löve2D.",
+            description: "A one-week project built to explore Lua and Löve2D.",
+            cardDescription: "A one-week project built to explore Lua and Löve2D.",
+            links: [
+                {
+                    type: "github",
+                    href: "https://github.com/jsfoao/love2d-boss-fight"
+                }
+            ],
             tags: ["Löve2D", "Lua", "ECS", "Rendering", "Physics"],
             link: "project.html?slug=love-2d-boss",
             cardImage: "content/projects/love-2d-boss/assets/screenshotgame.png",
@@ -158,14 +184,14 @@ const portfolioData = {
             year: "2023–Present",
             role: "Programmer · Lead VR Programmer",
             location: "Gothenburg, Sweden (Remote)",
-            description: "Owned gameplay and VR feature development for production milestones and release quality. Led VR-specific systems and mentored junior programmers."
+            description: "Contributing to the development of multi-platform titles, ensuring scalable gameplay systems and that features are shipped with high quality across production milestones."
         },
         {
             title: "Moonhood AB",
             year: "2022–2023",
             role: "Programmer Internship",
             location: "Gothenburg, Sweden",
-            description: "Contributed to gameplay and interaction systems during a structured internship, shipping features across multiple production sprints."
+            description: "Contributed to gameplay systems and shipped features across multiple production miletstones."
         }
     ],
     education: [

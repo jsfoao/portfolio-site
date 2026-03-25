@@ -48,6 +48,3 @@ For this project, I made a very conscious effort to keep a consistent coding str
 <p class="img-row cols-3">
     <img src="content/projects/nata-engine/assets/order_of_execution.png" class="img-col">
 </p>
-
-## Main Takeaways
-Working on a bigger project like this forced me to constantly organize my code and structure in a way that was understandable in the present and also in the future. Like in most projects, I've had to refactor older systems and I felt comfortable doing it since I could easily read through the code and could get into it very quickly. This made the process of refactoring not seem like such a daunting task and it's something that I've constantly been doing with small optimizations on the engine's systems.

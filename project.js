@@ -866,7 +866,7 @@ async function initProjectPage() {
     const project = findProjectBySlug(slug);
     if (project) {
         renderProjectHero(project);
-        document.title = project.title + " | Joao Freire";
+        document.title = project.title + " | João Freire";
     }
 
     try {
@@ -877,7 +877,7 @@ async function initProjectPage() {
         }
     } catch (error) {
         if (!project) {
-            document.title = "Project not found | Joao Freire";
+            document.title = "Project not found | João Freire";
         }
         const details = error && error.message ? " Reason: " + error.message : "";
         renderError("Could not load project content for '" + slug + "'. Add content/projects/" + slug + "/" + slug + ".md to create it." + details);
