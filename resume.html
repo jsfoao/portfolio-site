@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | Joao Freire</title>
+    <meta name="description" content="Resume of Joao Freire, game programmer.">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="resume.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
+    <script src="resume-data.js" defer></script>
+    <script src="resume.js" defer></script>
+</head>
+<body>
+    <div class="site-bg" aria-hidden="true"></div>
+
+    <header class="nav-shell no-print">
+        <nav class="nav container" aria-label="Primary">
+            <a class="brand" href="index.html">JOÃO FREIRE <span class="brand-subtitle">Game Programmer</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="resume.html" aria-current="page">Resume</a></li>
+                <li>
+                    <a class="icon-link" href="https://github.com/jsfoao" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a class="icon-link" href="https://www.linkedin.com/in/joao-saraivafreire/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container resume-page">
+        <section class="resume-sheet" aria-label="Resume content">
+            <section class="resume-intro" aria-label="Profile">
+                <header class="resume-header">
+                    <div class="resume-identity">
+                        <h1 id="resumeName"></h1>
+                        <p id="resumeRole" class="resume-role"></p>
+                    </div>
+                    <div class="resume-actions no-print">
+                        <button id="downloadPdfBtn" type="button" class="resume-btn">Download PDF</button>
+                    </div>
+                </header>
+
+                <div id="resumeContact" class="resume-contact" aria-label="Contact"></div>
+                <p id="resumeSummary" class="resume-summary"></p>
+            </section>
+
+            <section class="resume-section">
+                <div class="section-heading resume-heading">
+                    <h2>Experience</h2>
+                </div>
+                <div id="experienceList" class="grid resume-exp-grid"></div>
+            </section>
+
+            <section class="resume-section">
+                <div class="section-heading resume-heading">
+                    <h2>Projects</h2>
+                </div>
+                <div id="projectsList" class="grid resume-exp-grid"></div>
+            </section>
+
+            <section class="resume-section">
+                <div class="section-heading resume-heading">
+                    <h2>Education</h2>
+                </div>
+                <div id="educationList" class="grid resume-edu-grid"></div>
+            </section>
+
+            <section class="resume-section">
+                <div class="section-heading resume-heading">
+                    <h2>Skills</h2>
+                </div>
+                <div id="skillsList" class="pill-row resume-skills" aria-label="Skills"></div>
+            </section>
+
+            <section class="resume-section">
+                <div class="section-heading resume-heading">
+                    <h2>Languages</h2>
+                </div>
+                <div id="languagesList" class="resume-languages" aria-label="Languages"></div>
+            </section>
+        </section>
+    </main>
+</body>
+</html>

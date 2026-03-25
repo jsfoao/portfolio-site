@@ -4,259 +4,102 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <script></script>
+    <title>Joao Freire | Game Programmer</title>
+    <meta name="description" content="Game programmer portfolio - Joao Freire">
     <link rel="stylesheet" href="main.css">
+    <script src="portfolio-data.js" defer></script>
+    <script src="main.js" defer></script>
 </head>
 <body>
-    <img class="bg-image" src="assets/img/tram_bg.jpg" alt="">
-    <img class="bg-overlay" src="assets/img/BG_Rectangles.png" alt="">
-    <div class="wrapper">
-        <!-- Nav bar-->
-        <div class="header" style="margin-bottom: 2rem;">
-            <a class="header-logo" href="index.html">
-                <div class="title">
-                    João Freire
-                </div>
-                <div class="subtitle">
-                    Programmer
-                    <div class="title-line"></div>
-                </div>
-            </a>
-            <ul class="menu">
-                <li>
-                    <a class="menu-button" href="projects.html">
-                        <div class="content">Portfolio</div>
-                    </a>
-                </li>
-                <li>
-                    <a class="menu-button" href="#about">
-                        <div class="content">About</div>
-                    </a>
-                </li>
-                <li>
-                    <a class="menu-button" href="https://www.joaofreire.se/joao_freire_cv.pdf" target="_blank">
-                        <div class="content">CV</div>
-                    </a>
-                </li>
-                <li>
-                    <a class="menu-button" href="https://github.com/jsfoao" target="_blank">
-                        <div class="image">
-                            <img src="assets/icons/github_logo.png" style="height: 100%;" alt="">
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a class="menu-button" href="https://www.linkedin.com/in/joao-saraivafreire/" target="_blank">
-                        <div class="image">
-                            <img src="assets/icons/linkedin_logo.png" style="height: 100%;" alt="">
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a class="menu-button" href="https://jwow.itch.io/" target="_blank">
-                        <div class="image">
-                            <img src="assets/icons/itch-icon.png" style="height: 100%;" alt="">
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <!-- Hello-->
-        <div id="hello-wrapper">
-            <div id="paragraph-wrapper">
-                <div class="category-title">
-                    Hello!
-                </div>
-                <p id="profile-paragraph" style="font-size: large;">
-                    I'm a game programmer with a very solid understanding of math and physics that enjoys every step of the game development process. I'm most experienced in gameplay programming but have also delved deeper into other topics like engine, rendering or tools. I'd say that my curiosity and team spirit are two qualities that describe me well.           </div>
-            <img src="assets/img/profile-pic.jpg" alt="" class="profile-pic">
-        </div>
-        <!-- Projects-->
-        <div class="category-wrapper">
-            <div class="category-more">
-                <div class="category-title">
-                    Featured Projects
-                </div>
-                <a href="projects.html" class="more-button">
-                    More
-                    <img src="assets/icons/front-arrow-icon.png" alt="" class="arrow-icon">
-                </a>
-            </div>
-            <ul class="card-list">
-                <a class="card" href="project-nata.html">
-                    <img src="assets/img/projects/nata-engine/collision.png" alt="" style="bottom: -10%; left: -20%; width: 140%; height: 140%;" class="card-image">
-                    <img class="video" src="assets/img/projects/nata-engine/shooterdemo.gif" style="left: -40%"></img>
-                    <div class="gradient-overlay"></div>
-                    <div class="card-content">
-                        <div class="title-wrapper">
-                            <h1 class="card-title">Nata Engine</h1>
-                            <p class="card-description">Role: Programmer</p>
-                            <p class="card-description">Team: Solo</p>
-                            <p class="card-description">Build Date: In development</p>
-                            <p class="card-description">Time: 2 months</p>
-                        </div>
-                        <ul class="category-list">
-                            <li><div class="card-category">Engine</div></li>
-                            <li><div class="card-category">OpenGL</div></li>
-                            <li><div class="card-category">C++</div></li>
-                        </ul>
-                    </div>
-                </a>
-                <a class="card" href="project-pual.html">
-                    <img src="assets/img/projects/pual/PUAL_Marketing.png" alt="" style="left: -50px;" class="card-image">
-                    <img class="video" src="assets/img/projects/pual/bonking.gif"></img>
-                    <div class="gradient-overlay"></div>
-                    <div class="card-content">
-                        <div class="title-wrapper">
-                            <h1 class="card-title">Pack Up & Leaf</h1>
-                            <p class="card-description">Role: Programmer</p>
-                            <p class="card-description">Team: 11</p>
-                            <p class="card-description">Build Date: 11/02/2022</p>
-                            <p class="card-description">Time: 4 weeks</p>
-                        </div>
-                        <ul class="category-list">
-                            <li><div class="card-category">Game</div></li>
-                            <li><div class="card-category">Unity</div></li>
-                        </ul>
-                    </div>
-                </a>
-                <a class="card" href="project-rouse.html">
-                    <img src="assets/img/projects/rouse/rouse-thumbnail.png" alt="" style="left: -50px;" class="card-image">
-                    <img class="video" src="assets/img/projects/rouse/checkpoint.gif" alt=""></img>
-                    <div class="gradient-overlay"></div>
-                    <div class="card-content">
-                        <div class="title-wrapper">
-                            <h1 class="card-title">Rouse</h1>
-                            <p class="card-description">Role: Programmer</p>
-                            <p class="card-description">Team: 12</p>
-                            <p class="card-description">Build Date: 24/06/2022</p>
-                            <p class="card-description">Time: 7 weeks</p>
-                        </div>
-                        <ul class="category-list">
-                            <li><div class="card-category">Game</div></li>
-                            <li><div class="card-category">Unreal</div></li>
-                        </ul>
-                    </div>
-                </a>
-                <a class="card" href="project-runtime-editor.html">
-                    <img src="assets/img/projects/runtime-editor/g749MQ.png" alt="" style="left: -50px;" class="card-image">
-                    <img class="video" src="assets/img/projects/runtime-editor/image3.gif" alt="" style="left: -50%;"></img>
-                    <div class="gradient-overlay"></div>
-                    <div class="card-content">
-                        <div class="title-wrapper">
-                            <h1 class="card-title">Runtime Editor</h1>
-                            <p class="card-description">Role: Programmer</p>
-                            <p class="card-description">Team: Solo</p>
-                            <p class="card-description">Build Date: 15/12/2022</p>
-                            <p class="card-description">Time: 2 weeks</p>
-                        </div>
-                        <ul class="category-list">
-                            <li><div class="card-category">Graphs</div></li>
-                            <li><div class="card-category">Editor</div></li>
-                            <li><div class="card-category">Unity</div></li>
-                        </ul>
-                    </div>
-                </a>
-            </ul>
-        </div>
-        <!-- About -->
-        <section id="about" class="category-wrapper">
-            <div class="category-title">
-                About
-            </div>
-            <div class="flex-column">
-                <div class="content">
-                    <p>
-                        Hi, I’m João! I’m a 26 year old game programmer currently studying at Futuregames in Stockholm. Sweden. Although I’m most experienced in gameplay programming, I’m interested in every step of the development process and have worked with tool-making, UI, VFX and animation on previous projects. I believe this cross-discipline understanding has proven beneficial when working with a team.
-                    </p>
-                    <p>
-                        I’m always eager to learn new things or dive deeper into topics I’m less familiar with. I’m very passionate about math and physics and am quite comfortable applying my theoretical knowledge in more practical ways. I’m also comfortable working with Agile/Scrum teams and have been using Jira extensively this past year. I’m fluent in version control software, both Git and Perforce.
-                    </p>
-                    <br>
-                    <p style="margin-bottom: 0">
-                        Want to know more about me?
-                        
-                        Don't hesitate to get in touch:                    
-                    </p>
-                    <p style="margin-top: 0">
-                        joao.saraivafreire@gmail.com
-                    </p>
-                    <p style="margin: 0;">
-                        or via my other contact information.    
-                    </p>    
-                </div>
-                <img src="assets/img/miso_pic.png" alt="" style="height: 280px; margin-top: 2rem; border-radius: 0.5rem;">
-            </div>
+    <div class="site-bg" aria-hidden="true"></div>
 
-        </section>
-        <!-- Career-->
-        <section id="career" class="category-wrapper" style="width: 100%;">
-            <div class="content" style="width: 100%;">
-                <div class="category-title">
-                    Education
-                </div>
-                <div style="width: 100%; display: flex; align-items: center; justify-content: space-between;">
-                    <div style="min-width: 20px">
-                        <p class="content-paragraph">
-                            <span style="font-family: Poppins SemiBold;">Game Programmer</span> - Futuregames
-                        </p>
-                        <p class="content-paragraph">
-                            Stockholm, Sweden
-                        </p>
-                    </div>
-                    <p class="content-paragraph" style="text-align: right; font-size: large;">
-                        2021-2023
-                    </p>
-                </div>
-                <div style="width: 100%; display: flex; align-items: center; justify-content: space-between; margin-top: 1rem;">
-                    <div style="min-width: 20px">
-                        <p class="content-paragraph">
-                            <span style="font-family: Poppins SemiBold;">Game Engines</span> - Futuregames
-                        </p>
-                        <p class="content-paragraph">
-                            Stockholm, Sweden
-                        </p>
-                    </div>
-                    <p class="content-paragraph" style="text-align: right; font-size: large;">
-                        2020-2021
-                    </p>
-                </div>
-                <div style="width: 100%; display: flex; align-items: center; justify-content: space-between; margin-top: 1rem;">
-                    <div style="min-width: 20px;">
-                        <p class="content-paragraph">
-                            <span style="font-family: Poppins SemiBold;">Electronics Engineering</span> - IST (University of Lisbon)
-                        </p>
-                        <p class="content-paragraph">
-                            Lisbon, Portugal
-                        </p>
-                    </div>
-                    <p class="content-paragraph" style="text-align: right; font-size: large; max-width: 10px;">
-                        2016-2019
-                    </p>
-                </div>
+    <header class="nav-shell">
+        <nav class="nav container" aria-label="Primary">
+            <a class="brand" href="#top">JOÃO FREIRE <span class="brand-subtitle">Game Programmer</span></a>
+            <ul class="nav-links">
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li>
+                    <a class="icon-link" href="https://github.com/jsfoao" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a class="icon-link" href="https://www.linkedin.com/in/joao-saraivafreire/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="top" class="container page-content">
+        <section class="hero" data-reveal>
+            <img class="hero-image" src="assets/img/profile-pic.jpg" alt="Joao Freire portrait">
+            <div>
+                <p id="heroEyebrow" class="eyebrow"></p>
+                <h1 id="heroTitle"></h1>
+                <p id="heroDescription" class="lead"></p>
+                <div id="heroContact" class="hero-contact"></div>
             </div>
         </section>
-        <section id="technical" class="category-wrapper">
-            <div class="content">
-                <div class="category-title">
-                    Technical Experience
-                </div>
-                <ul class="category-list" style="margin: 0;">
-                    <li><div class="card-category" style="font-size: medium;">C#</div></li>
-                    <li><div class="card-category"style="font-size: medium;">C++</div></li>
-                    <li><div class="card-category"style="font-size: medium;">Blueprints</div></li>
-                    <li><div class="card-category"style="font-size: medium;">Unity</div></li>
-                    <li><div class="card-category"style="font-size: medium;">Unreal Engine</div></li>
-                    <li><div class="card-category"style="font-size: medium;">Perforce</div></li>
-                    <li><div class="card-category"style="font-size: medium;">Git</div></li>
-                    <li><div class="card-category"style="font-size: medium;">Jira</div></li>
-                </ul>
+
+        <section id="projects" class="section" data-reveal>
+            <div class="section-heading">
+                <h2>Projects</h2>
+            </div>
+            <div id="project-grid" class="grid" aria-live="polite"></div>
+        </section>
+
+        <section id="personal" class="section" data-reveal>
+            <div class="section-heading">
+                <h2>Personal</h2>
+            </div>
+            <div id="personal-project-grid" class="grid" aria-live="polite"></div>
+        </section>
+
+        <section id="about" class="section" data-reveal>
+            <div class="section-heading">
+                <h2>About</h2>
+            </div>
+            <div class="section-body">
+                <p>
+                    Hi! I'm João, a 29-year-old Portuguese game programmer currently working at Moonhood.
+                    I focus on designing and building robust gameplay systems that are easy to use. I enjoy creating tools and systems that make development smoother and more scalable for everyone involved.
+                    I consider myself a strong team player and value clear communication and collaboration. I'm naturally curious and always looking to learn something new, whether that means exploring new technologies, experimenting with systems, or picking up a new engine or programming language. I usually have a side project where I can dive deeper into something new.
+                   
+                    Outside of game development, I enjoy staying active. You'll often find me walking my two dogs, playing badminton or football, or spending time with friends over board games.
+                </p>
+                <div id="knowledge-pills" class="pill-row" aria-label="Knowledge areas"></div>
             </div>
         </section>
-        <div class="rights-reserved">
-            © 2022 João Freire. All rights reserved. 
+
+        <section id="experience" class="section" data-reveal>
+            <div class="section-heading">
+                <h2>Experience</h2>
+            </div>
+            <div id="experience-grid" class="grid"></div>
+        </section>
+
+        <section id="education" class="section" data-reveal>
+            <div class="section-heading">
+                <h2>Education</h2>
+            </div>
+            <div id="education-grid" class="grid"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Joao Freire all rights reserved</p>
         </div>
-    </div>
+    </footer>
 </body>
 </html>
