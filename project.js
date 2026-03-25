@@ -28,32 +28,6 @@ function createPlayIcon() {
     return icon;
 }
 
-function createTheaterIcon() {
-    const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    icon.setAttribute("viewBox", "0 0 24 24");
-    icon.setAttribute("fill", "none");
-    icon.setAttribute("stroke", "currentColor");
-    icon.setAttribute("stroke-width", "1.7");
-    icon.setAttribute("stroke-linecap", "round");
-    icon.setAttribute("stroke-linejoin", "round");
-    icon.setAttribute("aria-hidden", "true");
-
-    const paths = [
-        "M9 3H5a2 2 0 0 0-2 2v4",
-        "M15 3h4a2 2 0 0 1 2 2v4",
-        "M21 15v4a2 2 0 0 1-2 2h-4",
-        "M3 15v4a2 2 0 0 0 2 2h4"
-    ];
-
-    paths.forEach((definition) => {
-        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-        path.setAttribute("d", definition);
-        icon.appendChild(path);
-    });
-
-    return icon;
-}
-
 function createExternalLinkIcon() {
     const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     icon.setAttribute("viewBox", "0 0 24 24");
@@ -271,136 +245,79 @@ function renderProjectLinks(links) {
 }
 
 function getProjectGallery(project) {
-    if (Array.isArray(project.gallery) && project.gallery.length > 0) {
-        return project.gallery;
+    if (!Array.isArray(project.gallery)) {
+        return [];
     }
 
-    const slides = [];
-    const pushUnique = (slide) => {
-        if (!slide || !slide.src) {
-            return;
-        }
-
-        const duplicate = slides.some((item) => item.type === slide.type && item.src === slide.src);
-        if (!duplicate) {
-            slides.push(slide);
-        }
-    };
-
-    if (project.cardImage) {
-        pushUnique({
-            type: "image",
-            src: project.cardImage,
-            alt: project.title + " still"
-        });
-    }
-
-    if (project.hoverMedia) {
-        pushUnique({
-            type: /\.(mp4|webm|ogg)$/i.test(project.hoverMedia) ? "video" : "image",
-            src: project.hoverMedia,
-            alt: project.title + " preview",
-            poster: project.cardImage || ""
-        });
-    }
-
-    if (project.trailer) {
-        pushUnique({
-            type: "video",
-            src: project.trailer,
-            poster: project.cardImage || "",
-            alt: project.title + " trailer"
-        });
-    }
-
-    return slides;
-}
-
-function getTheaterModalElements() {
-    return {
-        modal: document.getElementById("theaterModal"),
-        media: document.getElementById("theaterModalMedia"),
-        close: document.getElementById("theaterModalClose")
-    };
-}
-
-function closeTheaterModal() {
-    const { modal, media } = getTheaterModalElements();
-    if (!modal || !media) {
-        return;
-    }
-
-    media.querySelectorAll("video").forEach((video) => {
-        video.pause();
-        video.currentTime = 0;
+    return project.gallery.filter((slide) => {
+        return slide
+            && (slide.type === "image" || slide.type === "video")
+            && typeof slide.src === "string"
+            && slide.src.trim().length > 0;
     });
-
-    media.innerHTML = "";
-    modal.hidden = true;
-    document.body.classList.remove("theater-open");
 }
 
-function openTheaterModal(slide) {
-    const { modal, media } = getTheaterModalElements();
-    if (!modal || !media || !slide) {
-        return;
+function getYouTubeVideoId(url) {
+    if (typeof url !== "string" || !url.trim()) {
+        return "";
     }
 
-    media.innerHTML = "";
+    try {
+        const parsed = new URL(url, window.location.href);
+        const host = parsed.hostname.toLowerCase();
 
-    if (slide.type === "video") {
-        const video = document.createElement("video");
-        video.className = "theater-modal-video";
-        video.src = slide.src;
-        video.controls = true;
-        video.autoplay = true;
-        video.playsInline = true;
-        if (slide.poster) {
-            video.poster = slide.poster;
+        if (host === "youtu.be") {
+            const id = parsed.pathname.replace(/^\/+/, "").split("/")[0];
+            return id || "";
         }
-        media.appendChild(video);
-    } else {
-        const image = document.createElement("img");
-        image.className = "theater-modal-image";
-        image.src = slide.src;
-        image.alt = slide.alt || "Expanded project media";
-        media.appendChild(image);
+
+        if (host === "youtube.com" || host === "www.youtube.com" || host === "m.youtube.com") {
+            if (parsed.pathname === "/watch") {
+                return parsed.searchParams.get("v") || "";
+            }
+
+            if (parsed.pathname.startsWith("/embed/")) {
+                return parsed.pathname.split("/embed/")[1].split("/")[0] || "";
+            }
+
+            if (parsed.pathname.startsWith("/shorts/")) {
+                return parsed.pathname.split("/shorts/")[1].split("/")[0] || "";
+            }
+        }
+    } catch (error) {
+        return "";
     }
 
-    modal.hidden = false;
-    document.body.classList.add("theater-open");
+    return "";
 }
 
-function setupTheaterModal() {
-    const { modal, close } = getTheaterModalElements();
-    if (!modal || modal.dataset.ready === "true") {
-        return;
+function getYouTubeEmbedUrl(url, options = {}) {
+    const autoplay = options.autoplay === true;
+    const muted = options.muted === true;
+    const id = getYouTubeVideoId(url);
+    if (!id) {
+        return "";
     }
 
-    modal.addEventListener("click", (event) => {
-        if (event.target instanceof HTMLElement && event.target.hasAttribute("data-theater-close")) {
-            closeTheaterModal();
-        }
-    });
-
-    if (close) {
-        close.addEventListener("click", closeTheaterModal);
-    }
-
-    document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && !modal.hidden) {
-            closeTheaterModal();
-        }
-    });
-
-    modal.dataset.ready = "true";
+    return "https://www.youtube.com/embed/" + id
+        + "?rel=0&modestbranding=1&playsinline=1"
+        + (autoplay ? "&autoplay=1" : "")
+        + (muted ? "&mute=1" : "");
 }
+
 
 function pauseGalleryVideos(scope) {
     scope.querySelectorAll("video").forEach((video) => {
         video.pause();
         if (!video.hasAttribute("data-keep-time")) {
             video.currentTime = 0;
+        }
+    });
+
+    scope.querySelectorAll("iframe[data-embed-src]").forEach((frame) => {
+        const src = frame.getAttribute("data-embed-src");
+        if (src) {
+            frame.setAttribute("src", src);
         }
     });
 }
@@ -451,6 +368,40 @@ function initializeProjectGallery(root) {
     root.projectGallery = { mainSwiper };
 }
 
+function applyGifFirstFrameThumbnail(thumbImage, gifSource) {
+    if (!thumbImage || !gifSource) {
+        return;
+    }
+
+    const gif = new Image();
+    gif.addEventListener("load", () => {
+        const width = gif.naturalWidth || gif.width;
+        const height = gif.naturalHeight || gif.height;
+        if (!width || !height) {
+            return;
+        }
+
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+
+        const context = canvas.getContext("2d");
+        if (!context) {
+            return;
+        }
+
+        context.drawImage(gif, 0, 0, width, height);
+
+        try {
+            thumbImage.src = canvas.toDataURL("image/png");
+        } catch (error) {
+            // Ignore conversion errors and keep existing thumbnail source.
+        }
+    }, { once: true });
+
+    gif.src = gifSource;
+}
+
 function renderProjectGallery(project) {
     const slides = getProjectGallery(project);
     if (slides.length === 0) {
@@ -475,18 +426,42 @@ function renderProjectGallery(project) {
     slides.forEach((slide, index) => {
         const mainSlide = document.createElement("div");
         mainSlide.className = "swiper-slide project-gallery-slide";
+        const shouldAutoplayOnLoad = index === 0;
 
         if (slide.type === "video") {
-            const video = document.createElement("video");
-            video.className = "project-gallery-media";
-            video.src = slide.src;
-            video.controls = true;
-            video.preload = "metadata";
-            video.playsInline = true;
-            if (slide.poster) {
-                video.poster = slide.poster;
+            const youTubeEmbed = getYouTubeEmbedUrl(slide.src, {
+                autoplay: shouldAutoplayOnLoad,
+                muted: shouldAutoplayOnLoad
+            });
+            if (youTubeEmbed) {
+                const frame = document.createElement("iframe");
+                frame.className = "project-gallery-media";
+                frame.src = youTubeEmbed;
+                frame.title = slide.alt || (project.title + " video " + (index + 1));
+                frame.setAttribute("frameborder", "0");
+                frame.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
+                frame.setAttribute("allowfullscreen", "");
+                frame.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+                frame.setAttribute("loading", shouldAutoplayOnLoad ? "eager" : "lazy");
+                frame.setAttribute("data-embed-src", getYouTubeEmbedUrl(slide.src, { autoplay: false, muted: false }));
+                mainSlide.appendChild(frame);
+            } else {
+                const video = document.createElement("video");
+                video.className = "project-gallery-media";
+                video.src = slide.src;
+                video.controls = true;
+                video.preload = "metadata";
+                video.playsInline = true;
+                video.autoplay = shouldAutoplayOnLoad;
+                video.muted = shouldAutoplayOnLoad;
+                if (shouldAutoplayOnLoad) {
+                    video.setAttribute("muted", "");
+                }
+                if (slide.poster) {
+                    video.poster = slide.poster;
+                }
+                mainSlide.appendChild(video);
             }
-            mainSlide.appendChild(video);
         } else {
             const image = document.createElement("img");
             image.className = "project-gallery-media";
@@ -502,17 +477,32 @@ function renderProjectGallery(project) {
         thumbSlide.type = "button";
         thumbSlide.setAttribute("aria-label", "Open slide " + (index + 1));
 
-        if (slide.thumb || slide.poster || slide.type === "image") {
+        const isGifImage = slide.type === "image" && /\.gif($|\?)/i.test(slide.src || "");
+        const transparentPixel = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+        const youTubeId = slide.type === "video" ? getYouTubeVideoId(slide.src) : "";
+        const youTubeThumb = youTubeId ? ("https://img.youtube.com/vi/" + youTubeId + "/hqdefault.jpg") : "";
+        const thumbnailSource = slide.thumb
+            || slide.poster
+            || youTubeThumb
+            || (isGifImage
+                ? (project.cardImage || transparentPixel)
+                : (slide.type === "image" ? slide.src : ""));
+
+        if (thumbnailSource) {
             const thumbImage = document.createElement("img");
             thumbImage.className = "project-gallery-thumb-image";
-            thumbImage.src = slide.thumb || slide.poster || slide.src;
+            thumbImage.src = thumbnailSource;
             thumbImage.alt = "";
             thumbImage.setAttribute("aria-hidden", "true");
             thumbSlide.appendChild(thumbImage);
+
+            if (isGifImage && !slide.thumb && !slide.poster) {
+                applyGifFirstFrameThumbnail(thumbImage, slide.src);
+            }
         } else {
             const thumbFallback = document.createElement("div");
             thumbFallback.className = "project-gallery-thumb-fallback";
-            thumbFallback.textContent = "Video";
+            thumbFallback.textContent = slide.type === "video" ? "Video" : "Image";
             thumbSlide.appendChild(thumbFallback);
         }
 
@@ -525,18 +515,6 @@ function renderProjectGallery(project) {
     });
 
     main.appendChild(mainWrapper);
-
-    const theaterButton = document.createElement("button");
-    theaterButton.className = "project-gallery-theater";
-    theaterButton.type = "button";
-    theaterButton.setAttribute("aria-label", "Open current slide in theater mode");
-    theaterButton.appendChild(createTheaterIcon());
-    theaterButton.addEventListener("click", () => {
-        const galleryState = gallery.projectGallery;
-        const activeIndex = galleryState && galleryState.mainSwiper ? galleryState.mainSwiper.activeIndex : 0;
-        openTheaterModal(slides[activeIndex] || slides[0]);
-    });
-    main.appendChild(theaterButton);
 
     if (slides.length > 1) {
         const prev = document.createElement("button");
@@ -861,7 +839,6 @@ function renderError(message) {
 async function initProjectPage() {
     const slug = getSlug();
     document.getElementById("projectSlug").textContent = slug;
-    setupTheaterModal();
 
     const project = findProjectBySlug(slug);
     if (project) {

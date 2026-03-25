@@ -77,41 +77,14 @@
     height: 100%;
     object-fit: cover;
     display: block;
-}
-
-.project-gallery-theater {
-    position: absolute;
-    right: 0.95rem;
-    bottom: 1rem;
-    z-index: 2;
-    width: 2rem;
-    height: 2rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     border: 0;
-    background: transparent;
-    color: rgba(245, 247, 250, 0.82);
-    cursor: pointer;
-    opacity: 0;
-    transition: opacity 0.2s ease, color 0.2s ease;
+    outline: 0;
+    box-shadow: none;
+    background: #000;
 }
 
-.project-gallery-theater svg {
-    width: 1.3rem;
-    height: 1.3rem;
-    filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.45));
-}
-
-.project-gallery-main:hover .project-gallery-theater,
-.project-gallery-main:focus-within .project-gallery-theater,
-.project-gallery-theater:focus-visible {
-    opacity: 1;
-}
-
-.project-gallery-theater:hover,
-.project-gallery-theater:focus-visible {
-    color: #ffffff;
+iframe.project-gallery-media {
+    border: 0;
 }
 
 .project-gallery-nav {
@@ -338,81 +311,6 @@
     padding: 0.3rem 0.65rem;
 }
 
-.theater-open {
-    overflow: hidden;
-}
-
-.theater-modal {
-    position: fixed;
-    inset: 0;
-    z-index: 1200;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-}
-
-.theater-modal[hidden] {
-    display: none;
-}
-
-.theater-modal-backdrop {
-    position: absolute;
-    inset: 0;
-    background: rgba(4, 6, 10, 0.84);
-    backdrop-filter: blur(6px);
-}
-
-.theater-modal-dialog {
-    position: relative;
-    z-index: 1;
-    width: min(1200px, 100%);
-    max-height: calc(100vh - 4rem);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.theater-modal-media {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.theater-modal-image,
-.theater-modal-video {
-    width: 100%;
-    max-width: 100%;
-    max-height: calc(100vh - 6rem);
-    display: block;
-    object-fit: contain;
-    border-radius: 12px;
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
-    background: #0d1117;
-}
-
-.theater-modal-close {
-    position: absolute;
-    top: -0.25rem;
-    right: -0.25rem;
-    z-index: 2;
-    width: 2.75rem;
-    height: 2.75rem;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 999px;
-    background: rgba(10, 12, 16, 0.86);
-    color: #ffffff;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.theater-modal-close span {
-    font-size: 1.8rem;
-    line-height: 1;
-}
 
 .project-doc {
     border: 1px solid var(--line);
@@ -737,26 +635,6 @@
     .project-gallery-nav {
         width: 1.75rem;
         height: 2.6rem;
-    }
-
-    .project-gallery-theater {
-        right: 0.7rem;
-        bottom: 0.75rem;
-        width: 1.8rem;
-        height: 1.8rem;
-    }
-
-    .theater-modal {
-        padding: 1rem;
-    }
-
-    .theater-modal-dialog {
-        max-height: calc(100vh - 2rem);
-    }
-
-    .theater-modal-image,
-    .theater-modal-video {
-        max-height: calc(100vh - 3rem);
     }
 
     .project-gallery-prev {
